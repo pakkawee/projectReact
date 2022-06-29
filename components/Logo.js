@@ -3,7 +3,7 @@ import React from 'react'
 
 const Logo = () => {
   const textLogo = "Thai-Nichi";
-  const isTH = false;
+  const isTH = true;
 
   return (
     <View>
