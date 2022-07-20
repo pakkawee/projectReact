@@ -3,30 +3,40 @@ import React, { useState } from 'react'
 
 
 const UserNameandPassword = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-
+    const [name, setName] = useState('')
+    const [mail, setMail] = useState('')
+    const checkTextInput = () => {
+        if(!name.trim()){
+            onPress={() => alert('Please Enter Name' )}
+            return;
+        }
+        else(!mail.trim()){}
+            onPress={() => alert('Please Enter Email' )}
+            return;}
+        else{
+            onPress={() => alert('Success' )}
+            return; }
+    }
+    
     return (
         <View style = {{ flex: 1, marginTop:20, alignItems: 'center'}}>
             <TextInput
-                value={username}
+                value={name}
                 style={styles.input}
-                placeholder='email '
-                onChangeText={(username => { setUsername(username) })} />
+                placeholder='Enter Name '
+                onChangeText={(name => { setName(name) })} />
             <TextInput
-                value={password}
+                value={mail}
                 style={styles.input}
-                placeholder='password '
-                onChangeText={(password => { setPassword(password) })} />
+                placeholder='Enter Email '
+                onChangeText={(mail => { setMail(mail) })} />
             <Button
+            checkTextInput
                 title='Submit'
-                onPress={() => alert('email: ' + username + '\npassword :' + password)}
                 color = 'pink'
-            />
-
+            /> 
         </View>
     )
-}
 
 export default UserNameandPassword
 
