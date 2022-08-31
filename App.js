@@ -1,29 +1,31 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-//import ButtonExample from './components/ButtonExample'
-// import Logo from './components/Logo'
-// import LotsOfGreetings from './components/LotsOfGreetings'
-// import MyCustomTextWith from './components/MyCustomTextWith'
-// import Count from './components/Count'
-// import InputText from './components/InputText'
-//import UserNameandPassword from './components/UserNameandPassword'
-//import AlertComponent from './components/AlertComponent'
-//import ImageWithTextInput from './components/ImageWithTextInput'
-import Touchable_Example from './components/Touchable_Example'
-const App = () => {
+import Page1 from './components/Page1'
+import Page2 from './components/Page2'
+import Page3 from './components/Page3'
+import style from './components/style'
+import {createNativeStackNavigator} from '@react-navigation/native'
+
+const Stack = createNativeStackNavigator();
   return (
-    <View style = {{flex : 1}}>
-      {/* <Text>App</Text> */}
-      {/* <Logo/> */}
-      {/* <LotsOfGreetings/> */}
-      {/* <MyCustomTextWith/> */}
-      {/* <Count/> */}
-      {/* <InputText/> */}
-      {/* {<UserNameandPassword/>} */}
-      {<Touchable_Example/>}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator 
+      initialRouteName = 'Page1'
+        screenOptions={{
+          headerStyle:{backgroundColor : '#pink'},
+          headerTintcolor : '#fff',
+          headerTitleStyle:{fontWeight:'bold',fontSize:25}
+        }}
+      >
+      
+
+      </Stack.Navigator>
+      <Stack.Screen name ='First Page' component = {Page1}/>
+      <Stack.Screen name ='Second Page'component = {Page2}/>
+      <Stack.Screen name ='Third Page' component = {Page3}/>
+    </NavigationContainer>
   )
-}
+
 
 export default App
 
